@@ -24,6 +24,7 @@ class ListRepositories extends StatelessWidget {
           : (FutureBuilder(
               future: context.watch<AppProvider>().futureQueryResult,
               builder: (context, snapshot) {
+                print(snapshot.connectionState);
                 if (snapshot.connectionState == ConnectionState.done) {
                   return GestureDetector(
                     child: ListView.builder(
