@@ -30,8 +30,12 @@
 
 - [@VuTan115](https://www.github.com/VuTan115)
 ## Demo
+| Android | Ios     | 
+| :-------- | :------- |
+| ![demo-android](https://user-images.githubusercontent.com/60535960/134812590-03442a5b-8ee1-4428-83c3-c81e57ba409c.gif) |  | 
 
-[LiveDemo](https://yumemi-coding-test-vu-cao-tan.web.app/)
+
+
 ## Platform support
 ![ios](https://user-images.githubusercontent.com/60535960/134810789-69a05bbe-8e1b-4674-a072-6c209f4e6d65.png)
 ![android](https://user-images.githubusercontent.com/60535960/134810585-39f5135f-b5f0-4427-98c1-049a15a13af3.png)
