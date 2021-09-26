@@ -32,7 +32,9 @@
 ## Demo
 | Android | Ios     | 
 | :-------- | :------- |
-| ![demo-android](https://user-images.githubusercontent.com/60535960/134812590-03442a5b-8ee1-4428-83c3-c81e57ba409c.gif) |  | 
+|![android](https://user-images.githubusercontent.com/60535960/134814899-f3488079-6b6b-4523-af95-0e125a2ad163.gif)|![ios](https://user-images.githubusercontent.com/60535960/134814363-3b97941f-0b37-442f-9dd4-a7cad0c377b2.gif)| 
+ 
+
 
 
 
