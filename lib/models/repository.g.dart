@@ -8,7 +8,9 @@ part of 'repository.dart';
 
 Repository _$RepositoryFromJson(Map<String, dynamic> json) => Repository(
       name: json['name'] as String?,
-      owner: json['owner'],
+      owner: json['owner'] == null
+          ? null
+          : Owner.fromJson(json['owner'] as Map<String, dynamic>),
       programmingLanguage: json['programmingLanguage'] as String?,
       forkCount: json['forkCount'] as int?,
       issueCount: json['issueCount'] as int?,
@@ -19,7 +21,7 @@ Repository _$RepositoryFromJson(Map<String, dynamic> json) => Repository(
 Map<String, dynamic> _$RepositoryToJson(Repository instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'owner': instance.owner,
+      'owner': instance.owner?.toJson(),
       'programmingLanguage': instance.programmingLanguage,
       'forkCount': instance.forkCount,
       'starCount': instance.starCount,
