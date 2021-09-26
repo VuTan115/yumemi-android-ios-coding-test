@@ -19,20 +19,16 @@ class _HomeState extends State<Home> {
         title: const Text('Github repo search'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Consumer<AppProvider>(
-          builder: (context, value, child) {
-            return Column(children: <Widget>[
-              SearchBar(onTextReadyForSearch: (String val) {
-                AppProvider().makeApiCallToBackend(val);
-              }),
-              Expanded(
-                  child: ListRepositories(
-                      repoItem: context.watch<AppProvider>().repoItems))
-            ]);
-          },
-        ),
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: Column(children: <Widget>[
+            SearchBar(onTextReadyForSearch: (String val) {
+              AppProvider().makeApiCallToBackend(val);
+              // AppProvider().setLoading();
+            }),
+            Consumer<AppProvider>(builder: (context, value, child) {
+              return const Expanded(child: ListRepositories());
+            })
+          ])),
     );
   }
 }

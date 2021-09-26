@@ -14,11 +14,12 @@ Future<List<Repository>> searchRepos(
   };
   final uri =
       Uri.https(GITHUB_API_URL, GITHUB_API_GET_SEARCH_REPO, queryParameters);
-
   final response = await http.get(uri);
-  final jsonRepo = json.decode(response.body);
-
   List<Repository> repositories = [];
+  if (response.statusCode != 200) {
+    return [];
+  }
+  final jsonRepo = json.decode(response.body);
   for (var i = 0; i < jsonRepo['items'].length; i++) {
     Map<String, dynamic> dummyOwner = {
       'ownerName': jsonRepo['items'][i]['owner']['login'],

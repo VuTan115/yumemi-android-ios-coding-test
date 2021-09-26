@@ -16,7 +16,7 @@ class SearchBar extends StatelessWidget {
           child: TextField(
             controller: controller,
             onSubmitted: (text) {
-              onTextReadyForSearch(text);
+              onTextReadyForSearch(text.trim());
             },
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
