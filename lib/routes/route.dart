@@ -17,13 +17,10 @@ class PageViewTransition<T> extends MaterialPageRoute<T> {
 }
 
 class AppRoute {
-  // For pages
   static const String homePage = '/';
   static const String repostoryDetailPage = '/repository-detail';
   static Route<dynamic> generateRoute(settings) {
     switch (settings.name) {
-      // For components
-
       case homePage:
         return PageViewTransition(builder: (_) => Home());
 

@@ -14,7 +14,6 @@ Future<List<Repository>> searchRepos(
   };
   final uri =
       Uri.https(GITHUB_API_URL, GITHUB_API_GET_SEARCH_REPO, queryParameters);
-  print(uri);
   final response = await http.get(uri);
   List<Repository> repositories = [];
   if (response.statusCode != 200) {

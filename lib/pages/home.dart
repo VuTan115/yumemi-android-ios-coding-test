@@ -20,15 +20,37 @@ class _HomeState extends State<Home> {
       ),
       body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(children: <Widget>[
-            SearchBar(onTextReadyForSearch: (String val) {
-              AppProvider().makeApiCallToBackend(val);
-              // AppProvider().setLoading();
-            }),
-            Consumer<AppProvider>(builder: (context, value, child) {
-              return const Expanded(child: ListRepositories());
-            })
+          child: Column(children: const <Widget>[
+            _searchBar(),
+            _listRepository(),
           ])),
     );
+  }
+}
+
+class _listRepository extends StatelessWidget {
+  const _listRepository({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<AppProvider>(builder: (context, value, child) {
+      return const Expanded(child: ListRepositories());
+    });
+  }
+}
+
+class _searchBar extends StatelessWidget {
+  const _searchBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SearchBar(onTextReadyForSearch: (String val) {
+      AppProvider().makeApiCallToBackend(val);
+      // AppProvider().setLoading();
+    });
   }
 }
